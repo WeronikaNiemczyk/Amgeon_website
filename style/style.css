@@ -1,0 +1,287 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f9;
+  color: #333;
+}
+
+header {
+  background: rgb(255, 255, 255);
+  /* background-image: linear-gradient(
+    90deg,
+    rgba(111, 187, 89, 0.186734068627451) 50%,
+    rgba(255, 255, 255, 1) 70%
+  ); */
+  color: black;
+  padding: 20px 0;
+  /* text-align: center; */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+/* header h3 {
+  font-family: "Poppins", serif;
+  font-weight: 00;
+  font-style: italic;
+  font-size: 30px;
+  margin-left: 60px;
+  display: flex;
+} */
+header img {
+  width: 200px;
+  margin-left: 20px;
+}
+/* header div {
+  display: flex;
+  gap: 60px;
+} */
+
+header nav {
+  margin-right: 40px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+header nav a {
+  color: #009fd9;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 15px;
+  transition: color 0.3s;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header nav a:hover {
+  color: #f4f4f9;
+}
+
+section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#hero {
+  text-align: center;
+  padding: 100px 20px;
+  background-image: url("../images/auto.jpeg");
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  font-family: "Poppins", serif;
+}
+#hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+#hero h2,
+#hero p,
+#hero button {
+  position: relative;
+  z-index: 1;
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+
+  font-weight: 400;
+  font-style: normal;
+}
+
+#hero p {
+  font-size: 1.5rem;
+}
+
+#hero button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: #6fbb59;
+  border: none;
+  color: black;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+#hero button:hover {
+  background: #087f23;
+  transform: scale(1.1);
+}
+
+.card {
+  background: linear-gradient(
+    90deg,
+    rgba(111, 187, 89, 0.186734068627451) 50%,
+    rgba(255, 255, 255, 1) 70%
+  );
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+}
+
+.slider img {
+  height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.slider img:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  background: #333;
+  color: black;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #4caf50;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #087f23;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  header img {
+    width: 150px;
+    margin-left: 20px;
+  }
+  header h3 {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 20px;
+    margin-left: 60px;
+    display: flex;
+  }
+  header div {
+    display: flex;
+    gap: 30px;
+  }
+
+  header nav a {
+    font-size: 1rem;
+    margin: 0 10px;
+  }
+
+  #hero h2 {
+    font-size: 2.5rem;
+  }
+
+  #hero p {
+    font-size: 1.2rem;
+  }
+
+  #hero button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  header img {
+    width: 100px;
+    margin-left: 20px;
+  }
+  header h3 {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 12px;
+    margin-left: 60px;
+    display: flex;
+  }
+  header div {
+    display: flex;
+    gap: 20px;
+  }
+  header nav a {
+    font-size: 15px;
+    margin: 0 5px;
+  }
+
+  #hero h2 {
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  #hero button {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+  }
+
+  .slider {
+    gap: 10px;
+  }
+
+  .slider img {
+    height: 80px;
+  }
+}
