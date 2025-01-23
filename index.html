@@ -28,77 +28,28 @@
       rel="stylesheet"
       href="node_modules/lightgallery/css/lg-thumbnail.css"
     />
+    <link
+      rel="stylesheet"
+      href="/node_modules/@glidejs/glide/dist/css/glide.core.min.css"
+    />
   </head>
   <body>
-    <header>
-      <!-- <div> -->
-      <img src="/images/Logo.png" alt="Logo" />
-      <nav>
-        <a href="#o-nas">O nas</a>
-        <a href="#oferta">Oferta</a>
-        <a href="#galeria">Galeria</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-      <!-- <h3>Profesjonalne Usługi Geologiczne</h3> -->
-      <!-- </div> -->
-    </header>
+    <!-- <--- HEADER --->
+    <include src="./partials/header.html"></include>
+    <!-- <--- HEADER --->
+    <!-- <--- HERO --->
+    <include src="./partials/hero.html"></include>
+    <!-- <--- HERO --->
+    <!-- <--- ABOUTUS --->
+    <include src="./partials/aboutUs.html"></include>
+    <!-- <--- ABOUTUS --->
 
-    <section id="hero">
-      <div class="overlay"></div>
-      <h2>Solidne fundamenty dla Twojej inwestycji</h2>
-      <p>Badania geologiczne od ekspertów</p>
-      <button class="moreBtn">Dowiedz się więcej</button>
-    </section>
-
-    <section class="aboutUs" id="o-nas">
-      <!-- <h2>O nas</h2> -->
-      <div class="circles">
-        <div>
-          <p class="firstLine">6 lat</p>
-          <p class="secondLine">doświadczenia</p>
-        </div>
-        <div>
-          <p class="firstLine">+ 2000</p>
-          <p class="secondLine">wykonanych projektów</p>
-        </div>
-        <div>
-          <p class="firstLine">+ 1500</p>
-          <p class="secondLine">zadowolonych klientów</p>
-        </div>
-      </div>
-      <!-- <p>
-        Jesteśmy zespołem doświadczonych geologów, którzy od lat wspierają
-        rozwój inwestycji w Polsce i za granicą. Nasze usługi są synonimem
-        profesjonalizmu i rzetelności.
-      </p> -->
-    </section>
-
-    <section id="oferta">
-      <h2>Oferta</h2>
-      <div class="card">
-        <h3>Badania geologiczne</h3>
-        <p>Kompleksowe analizy terenowe i laboratoryjne.</p>
-      </div>
-      <div class="card">
-        <h3>Projekty geotechniczne</h3>
-        <p>Dokumentacje geotechniczne dla inwestycji budowlanych.</p>
-      </div>
-      <div class="card">
-        <h3>Konsultacje i doradztwo</h3>
-        <p>Indywidualne podejście do każdego projektu.</p>
-      </div>
-    </section>
-
+    <!-- <--- OFERTA --->
+    <include src="./partials/oferta.html"></include>
+    <!-- <--- OFERTA --->
     <section id="galeria">
       <h2>Galeria</h2>
-      <!-- <div class="gallery">
-        <img src="https://via.placeholder.com/600x400" alt="Zdjęcie z terenu" />
-        <img
-          src="https://via.placeholder.com/600x400"
-          alt="Sprzęt geologiczny"
-        />
-        <img src="https://via.placeholder.com/600x400" alt="Zespół w pracy" />
-      </div> -->
+
       <div class="lightgallery" id="lightgallery">
         <a href="/images/gallery/samochod1.jpeg" data-lg-size="1024-800">
           <img alt="img1" src="/images/gallery/samochod1.jpeg" />
@@ -118,39 +69,85 @@
     </section>
 
     <section id="wspolpraca">
-      <h2>Firmy, z którymi współpracujemy</h2>
-      <div class="slider">
-        <img src="https://via.placeholder.com/200x100" alt="Logo firmy 1" />
-        <img src="https://via.placeholder.com/200x100" alt="Logo firmy 2" />
-        <img src="https://via.placeholder.com/200x100" alt="Logo firmy 3" />
-        <img src="https://via.placeholder.com/200x100" alt="Logo firmy 4" />
+      <h2>Nasi klienci</h2>
+
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <img src="./images/logo/1.jpg" width="100px" />
+            </li>
+            <li class="glide__slide">
+              <img src="./images/logo/7.jpg" width="100px" />
+            </li>
+            <li class="glide__slide">
+              <img src="./images/logo/e.jpg" width="100px" />
+            </li>
+            <li class="glide__slide">
+              <img src="./images/logo/LOGOf.jpg" width="100px" />
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <footer>
-      <p>
-        &copy; 2025 GeoTech - Wszelkie prawa zastrzeżone.
-        <a href="#">Polityka prywatności</a>
-      </p>
+      <p>&copy; 2025 Amgeon - Hubert Niemczyk - Wszelkie prawa zastrzeżone.</p>
     </footer>
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <script>
+      new Glide(".glide", {
+        type: "carousel",
+        startAt: 0,
+        perView: 3,
+        hoverpause: true,
+        autoplay: 2000,
+        loop: true,
+        keyboard: true,
+        animationTimingFunc: "cubic-bezier(.17,.67,.83,.67)",
+      }).mount();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery/lightgallery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script type="text/javascript">
+      lightGallery(document.getElementById("lightgallery"), {
+        plugins: [lgZoom],
+        speed: 500,
+        controls: true,
+        downloads: true,
+        mobileSettings: {
+          controls: false,
+          showCloseIcon: false,
+          download: false,
+          rotate: false,
+        },
+      });
+    </script>
+
+    <script>
+      // Funkcja do ładowania zawartości z plików w <include>
+      document.querySelectorAll("include").forEach((el) => {
+        const src = el.getAttribute("src");
+        if (src) {
+          fetch(src)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(`Could not fetch ${src}`);
+              }
+              return response.text();
+            })
+            .then((html) => {
+              el.outerHTML = html; // Zastępuje <include> zawartością pliku
+            })
+            .catch((err) => {
+              console.error(err);
+              el.outerHTML = `<p>Error loading ${src}</p>`;
+            });
+        }
+      });
+    </script>
   </body>
 
   <script type="module" src="script.js"></script>
-  <script type="text/javascript">
-    lightGallery(document.getElementById("lightgallery"), {
-      plugins: [lgZoom],
-      speed: 500,
-      controls: true,
-      downloads: true,
-      mobileSettings: {
-        controls: false,
-        showCloseIcon: false,
-        download: false,
-        rotate: false,
-      },
-    });
-  </script>
 </html>
