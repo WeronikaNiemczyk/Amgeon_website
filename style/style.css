@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", serif;
   margin: 0;
   padding: 0;
   background: #f4f4f9;
@@ -36,7 +36,7 @@ header h1 {
   display: flex;
 } */
 header img {
-  width: 200px;
+  width: 150px;
   margin-left: 20px;
 }
 /* header div {
@@ -61,32 +61,70 @@ header nav a {
   margin: 0 15px;
   font-size: 15px;
   transition: color 0.3s;
-  font-family: "Poppins", serif;
+
   font-weight: 400;
   font-style: normal;
 }
 
 header nav a:hover {
-  color: #f4f4f9;
+  /* color: #f4f4f9; */
+  color: #6fbb59;
 }
-
+.aboutUs {
+  padding-top: 5px;
+  color: #6fbb59;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 4px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
 section {
-  padding: 50px 20px;
+  padding: 10px 20px;
   max-width: 1200px;
   margin: auto;
+  /* border-color: #6fbb59;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 4px; */
 }
-
+.firstLine {
+  font-weight: 800;
+  font-size: 32px;
+  justify-self: center;
+  /* color: #009fd9; */
+  color: #6fbb59;
+}
+.firstLine:hover {
+  font-weight: 900;
+  font-size: 38px;
+  color: #009fd9;
+  transition: transform 0.5s;
+}
+.secondLine {
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #009fd9;
+}
+.circles {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+}
 #hero {
   text-align: center;
   padding: 100px 20px;
+  margin-bottom: 5px;
   background-image: url("../images/auto.jpeg");
+  width: auto;
   background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
   color: white;
   position: relative;
   background-size: cover;
   background-position: center;
   z-index: 1;
-  font-family: "Poppins", serif;
 }
 #hero .overlay {
   position: absolute;
@@ -96,6 +134,7 @@ section {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 0;
+  border-radius: 10px;
 }
 #hero h2,
 #hero p,
@@ -120,6 +159,7 @@ section {
   margin-top: 20px;
   padding: 15px 30px;
   background: #6fbb59;
+  /* background: #009fd9; */
   border: none;
   color: black;
   border-radius: 25px;
@@ -129,10 +169,22 @@ section {
 }
 
 #hero button:hover {
-  background: #087f23;
+  background: #009fd9;
   transform: scale(1.1);
 }
-
+.lightgallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.lightgallery a img {
+  width: auto;
+  height: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
 .card {
   background: linear-gradient(
     90deg,
