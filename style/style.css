@@ -4,45 +4,32 @@ body {
   padding: 0;
   background: #f4f4f9;
   color: #333;
+  overflow-x: hidden;
 }
 
 header {
   background: rgb(255, 255, 255);
-  /* background-image: linear-gradient(
-    90deg,
-    rgba(111, 187, 89, 0.186734068627451) 50%,
-    rgba(255, 255, 255, 1) 70%
-  ); */
   color: black;
-  padding: 20px 0;
-  /* text-align: center; */
+  padding: 15px;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 header h1 {
   margin: 0;
   font-size: 2.5rem;
 }
-/* header h3 {
-  font-family: "Poppins", serif;
-  font-weight: 00;
-  font-style: italic;
-  font-size: 30px;
-  margin-left: 60px;
-  display: flex;
-} */
+
 header img {
-  width: 150px;
-  margin-left: 20px;
+  width: 120px;
+  margin-left: 10px;
 }
-/* header div {
-  display: flex;
-  gap: 60px;
-} */
 
 header nav {
   margin-right: 40px;
@@ -59,7 +46,8 @@ header nav a {
   color: #009fd9;
   text-decoration: none;
   margin: 0 15px;
-  font-size: 15px;
+  font-size: 14px;
+  padding: 5px;
   transition: color 0.3s;
 
   font-weight: 400;
@@ -70,12 +58,52 @@ header nav a:hover {
   /* color: #f4f4f9; */
   color: #6fbb59;
 }
+.adress {
+  font-size: 15px;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+.contactDetails {
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+}
+.contactDetails img {
+  margin: 10px;
+}
+.contactDetails p {
+  margin: 10px;
+}
+.contactDetails a {
+  text-decoration: none;
+  color: #6fbb59;
+}
+
+.adressFooter {
+  font-size: 15px;
+  color: white;
+  margin: 5px;
+}
+footer div {
+  display: flex;
+  justify-self: center;
+}
+.adressData {
+  display: flex;
+  display: table-column;
+}
+
+.adressText {
+  color: white;
+}
 .aboutUs {
   padding-top: 5px;
   color: #6fbb59;
-  border-style: solid;
+  /* border-style: solid; */
   border-radius: 20px;
-  border-width: 4px;
+  /* border-width: 4px; */
   padding-bottom: 10px;
   margin-bottom: 5px;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
@@ -110,12 +138,25 @@ section {
 }
 .circles {
   display: flex;
-  gap: 60px;
+  gap: 100px;
   justify-content: center;
 }
+.clock {
+  position: relative;
+  width: 70px;
+  left: 40px;
+  top: 30px;
+}
+.project {
+  position: relative;
+  width: 70px;
+  left: 80px;
+  top: 30px;
+}
+
 #hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: 80px 10px;
   margin-bottom: 5px;
   background-image: url("../images/auto.jpeg");
   width: auto;
@@ -145,7 +186,7 @@ section {
 }
 
 #hero h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 10px;
 
   font-weight: 400;
@@ -153,20 +194,32 @@ section {
 }
 
 #hero p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 #hero button {
   margin-top: 20px;
-  padding: 15px 30px;
+  padding: 10px 20px;
   background: #6fbb59;
-  /* background: #009fd9; */
   border: none;
   color: black;
   border-radius: 25px;
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.3s, background 0.3s;
+  text-decoration: none;
+}
+.btn {
+  cursor: pointer;
+}
+.offerBtn {
+  cursor: pointer;
+}
+.galleryBtn {
+  cursor: pointer;
+}
+#myBtn1 {
+  cursor: pointer;
 }
 
 #hero button:hover {
@@ -200,10 +253,41 @@ section {
   padding: 20px;
   margin: 20px 0;
   transition: transform 0.3s;
+  position: relative;
 }
 
 .card:hover {
   transform: translateY(-10px);
+}
+.card-content {
+  display: none;
+  margin-top: 10px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+.card-content.show {
+  display: block;
+  opacity: 1;
+  max-height: 300px;
+}
+.toggle-btn {
+  margin-top: 10px;
+  background-color: #6bbb59;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 25px;
+  transition: transform 0.3s, background 0.3s;
+  text-decoration: none;
+}
+
+.toggle-btn:hover {
+  background: #009fd9;
+  transform: scale(1.1);
 }
 
 .gallery img {
@@ -269,12 +353,17 @@ footer a:hover {
 }
 /* Responsiveness */
 @media (max-width: 768px) {
+  header {
+    align-items: center;
+    text-align: center;
+  }
   header h1 {
     font-size: 2rem;
   }
   header img {
-    width: 150px;
+    width: 100px;
     margin-left: 20px;
+    margin-bottom: 10px;
   }
   header h3 {
     font-weight: 600;
@@ -287,10 +376,15 @@ footer a:hover {
     display: flex;
     gap: 30px;
   }
-
+  .header nav {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
   header nav a {
     font-size: 1rem;
     margin: 0 10px;
+    cursor: pointer;
   }
 
   #hero h2 {
@@ -306,8 +400,47 @@ footer a:hover {
     font-size: 0.9rem;
   }
 
+  .clock {
+    position: relative;
+    width: 50px;
+    left: 40px;
+  }
+
+  .project {
+    position: relative;
+    width: 50px;
+    left: 90px;
+  }
+  .firstLine {
+    font-weight: 700;
+    font-size: 26px;
+    text-align: center;
+  }
+  .secondLine {
+    font-size: 18px;
+  }
+  .circles {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
   .card {
-    padding: 15px;
+    padding: 10px;
+  }
+  #hero {
+    padding: 60px 10px;
+  }
+
+  #hero h2 {
+    font-size: 1.8rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  #hero button {
+    font-size: 0.8rem;
   }
 }
 
@@ -316,7 +449,7 @@ footer a:hover {
     font-size: 1.5rem;
   }
   header img {
-    width: 100px;
+    width: 80px;
     margin-left: 20px;
   }
   header h3 {
@@ -331,16 +464,16 @@ footer a:hover {
     gap: 20px;
   }
   header nav a {
-    font-size: 15px;
+    font-size: 14px;
     margin: 0 5px;
   }
 
   #hero h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   #hero p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   #hero button {
@@ -354,5 +487,201 @@ footer a:hover {
 
   .slider img {
     height: 80px;
+  }
+  .circles {
+    gap: 15px;
+    align-items: baseline;
+  }
+  .clock {
+    position: relative;
+    width: 30px;
+    left: 30px;
+  }
+  .project {
+    position: relative;
+    width: 30px;
+    left: 50px;
+  }
+  .firstLine {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 5px;
+  }
+  .secondLine {
+    font-size: 12px;
+  }
+  footer {
+    max-width: 1200px;
+
+    display: flex;
+    flex-direction: column;
+  }
+  .adressData {
+    flex-direction: column;
+  }
+  .adressFooter {
+    font-size: 12px;
+    color: white;
+    margin: 5px;
+  }
+  .contactDetails {
+    margin-left: 5px;
+  }
+  .contactDetails img {
+    margin: 5px;
+  }
+  .contactDetails p {
+    margin: 5px;
+  }
+  .adressText {
+    font-size: 12px;
+  }
+
+  .allRights {
+    font-size: 10px;
+  }
+  .modalTitle {
+    font-size: 20px;
+  }
+  .contactTitle {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  .card p {
+    font-size: 12px;
+  }
+  .sectionTitle {
+    font-size: 20px;
+  }
+  .contactData {
+    font-size: 12px;
+  }
+}
+/* <-- MODAL STYLE --> */
+
+/* Style dla modala */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  transform: scaleY(0.01) scaleX(0);
+  animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.modal-content {
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  margin: auto;
+  margin-top: 200px;
+  transform: scale(0);
+  animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.close {
+  font-size: 28px;
+  position: absolute;
+  /* top: 10px;
+  right: 20px; */
+  cursor: pointer;
+  position: sticky;
+  z-index: 1;
+}
+
+.border {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+  text-align: center;
+  color: #6fbb59;
+  position: relative;
+  box-shadow: 0 0 0 5px #6fbb59;
+  border-radius: 50%;
+  justify-self: right;
+}
+.border:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: -4px;
+  left: -4px;
+  border: 4px dashed #6fbb59;
+}
+.border:hover {
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.2s;
+}
+.border:hover:after {
+  animation: spin 10s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.modal-closed {
+  transform: scale(1);
+  animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.content-close {
+  animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+@keyframes unfoldIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes unfoldOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
   }
 }
