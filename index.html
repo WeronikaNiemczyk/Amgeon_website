@@ -84,7 +84,7 @@
           /></span>
         </div>
 
-        <h2 class="modalTitle"></h2>Modal 2</h2>
+        <h2 class="modalTitle">Modal 2</h2>
         <p>To jest DRUGI modal.</p>
       </div>
     </div>
@@ -237,7 +237,9 @@
               height="20"
             />
             <p class="adressText">email:</p>
-            <a class="contactData" href="mailto:biuro@amgeon.pl">biuro@amgeon.pl</a>
+            <a class="contactData" href="mailto:biuro@amgeon.pl"
+              >biuro@amgeon.pl</a
+            >
           </div>
           <div class="contactDetails">
             <img
@@ -286,28 +288,6 @@
       });
     </script>
 
-    <!-- <script>
-      // Funkcja do ładowania zawartości z plików w <include>
-      document.querySelectorAll("include").forEach((el) => {
-        const src = el.getAttribute("src");
-        if (src) {
-          fetch(src)
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error(`Could not fetch ${src}`);
-              }
-              return response.text();
-            })
-            .then((html) => {
-              el.outerHTML = html; // Zastępuje <include> zawartością pliku
-            })
-            .catch((err) => {
-              console.error(err);
-              el.outerHTML = `<p>Error loading ${src}</p>`;
-            });
-        }
-      });
-    </script> -->
     <script type="module" src="script.js"></script>
   </body>
 </html>
