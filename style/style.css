@@ -543,6 +543,7 @@ footer a:hover {
   }
   .modalTitle {
     font-size: 20px;
+    justify-self: center;
   }
   .contactTitle {
     font-size: 15px;
@@ -558,6 +559,9 @@ footer a:hover {
   }
   .contactData {
     font-size: 12px;
+  }
+  .aboutUsText {
+    font-size: 14px;
   }
 }
 /* <-- MODAL STYLE --> */
